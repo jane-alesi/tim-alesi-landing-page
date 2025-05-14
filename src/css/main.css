@@ -1,0 +1,336 @@
+/* 
+ * Tim Alesi Landing Page
+ * Main Stylesheet
+ * 
+ * This file contains base styles and variables
+ * Component-specific styles will be modularized in separate files
+ */
+
+:root {
+    /* Color system */
+    --color-primary: #1a365d;
+    --color-primary-light: #2b6cb0;
+    --color-accent: #63b3ed;
+    --color-dark: #1a202c;
+    --color-gray: #718096;
+    --color-light-gray: #e2e8f0;
+    --color-off-white: #f8fafc;
+    
+    /* Accent colors */
+    --color-green: #38a169;
+    --color-coral: #ed8936;
+    --color-purple: #805ad5;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'Source Code Pro', monospace;
+    
+    /* Spacing system - based on 4px unit */
+    --space-unit: 0.25rem;
+    --space-xs: calc(var(--space-unit) * 2);  /* 8px */
+    --space-sm: calc(var(--space-unit) * 4);  /* 16px */
+    --space-md: calc(var(--space-unit) * 6);  /* 24px */
+    --space-lg: calc(var(--space-unit) * 8);  /* 32px */
+    --space-xl: calc(var(--space-unit) * 12); /* 48px */
+    
+    /* Layout */
+    --container-max: 1200px;
+    --content-max: 75ch;
+    --container-padding: var(--space-md);
+    
+    /* Typography scale */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Line heights */
+    --line-height-tight: 1.2;
+    --line-height-base: 1.5;
+    --line-height-loose: 1.8;
+    
+    /* Borders */
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 1rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--color-dark);
+    line-height: var(--line-height-base);
+    background-color: var(--color-off-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 300;
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--font-size-5xl);
+}
+
+h2 {
+    font-size: var(--font-size-4xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 400;
+}
+
+p {
+    margin-bottom: var(--space-md);
+}
+
+a {
+    color: var(--color-primary-light);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+}
+
+section {
+    padding: var(--space-xl) 0;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius-sm);
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-decoration: none;
+}
+
+.button.primary {
+    background-color: var(--color-primary-light);
+    color: white;
+}
+
+.button.primary:hover {
+    background-color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.button.secondary {
+    background-color: transparent;
+    color: var(--color-primary-light);
+    border: 1px solid var(--color-primary-light);
+}
+
+.button.secondary:hover {
+    background-color: rgba(43, 108, 176, 0.1);
+}
+
+/* Header and navigation */
+.site-header {
+    padding: var(--space-md) 0;
+    background-color: white;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-link {
+    color: var(--color-dark);
+    text-decoration: none;
+    position: relative;
+    transition: color var(--transition-fast);
+}
+
+.nav-link:after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--color-primary-light);
+    transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+    color: var(--color-primary-light);
+}
+
+.nav-link:hover:after {
+    width: 100%;
+}
+
+/* Hero section */
+.hero {
+    padding: var(--space-xl) 0;
+    background-color: white;
+}
+
+.hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+}
+
+.hero-content {
+    max-width: var(--content-max);
+}
+
+.hero h1 {
+    margin-bottom: var(--space-sm);
+    color: var(--color-primary);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    color: var(--color-gray);
+    margin-bottom: var(--space-lg);
+}
+
+.code-visualization {
+    height: 400px;
+    background-color: var(--color-light-gray);
+    border-radius: var(--border-radius-md);
+    /* This is a placeholder for the actual visualization */
+}
+
+/* Footer */
+.site-footer {
+    padding: var(--space-xl) 0;
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: var(--space-lg);
+}
+
+.footer-logo p {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-xl);
+}
+
+.footer-legal p {
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    :root {
+        --container-padding: var(--space-sm);
+    }
+    
+    .hero .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+    
+    .nav-links {
+        gap: var(--space-md);
+    }
+    
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
