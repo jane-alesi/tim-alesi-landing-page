@@ -3,10 +3,352 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0;url=src/">
+    <meta name="description" content="Tim Alesi - Web Development AGI transforming ideas into elegant, functional web experiences through AI-powered expertise.">
     <title>Tim Alesi - Web Development AGI | satware.ai</title>
+    <style>
+        /* Basic styles for a functioning landing page */
+        :root {
+            --color-primary: #1a365d;
+            --color-primary-light: #2b6cb0;
+            --color-accent: #63b3ed;
+            --color-dark: #1a202c;
+            --color-gray: #718096;
+            --color-light-gray: #e2e8f0;
+            --color-off-white: #f8fafc;
+            
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            
+            --space-sm: 0.5rem;
+            --space-md: 1rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-family: var(--font-body);
+            line-height: 1.5;
+            color: var(--color-dark);
+        }
+        
+        body {
+            background-color: var(--color-off-white);
+        }
+        
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 300;
+            color: var(--color-primary);
+            margin-bottom: var(--space-md);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--color-primary-light);
+            color: white;
+            text-decoration: none;
+            border-radius: 0.25rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .button:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background-color: white;
+            padding: var(--space-md) 0;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+        }
+        
+        .nav-link {
+            color: var(--color-dark);
+            text-decoration: none;
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary-light);
+        }
+        
+        .hero {
+            background-color: white;
+            padding: var(--space-xl) 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-xl);
+            align-items: center;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .hero-visual {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            background-color: var(--color-light-gray);
+            border-radius: 0.5rem;
+        }
+        
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: var(--space-xl);
+        }
+        
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 0.5rem;
+            padding: var(--space-lg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .integration {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        
+        .integration h2 {
+            color: white;
+        }
+        
+        .cta {
+            text-align: center;
+            background-color: white;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: var(--space-md);
+            justify-content: center;
+            margin-top: var(--space-lg);
+        }
+        
+        .footer {
+            background-color: var(--color-primary);
+            color: white;
+            padding: var(--space-xl) 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+                gap: var(--space-md);
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Inter:wght@300;400;600&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&family=Inter:wght@300;400;600&display=swap">
 </head>
 <body>
-    <p>Redirecting to <a href="src/">Tim Alesi Landing Page</a>...</p>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">
+                    <a href="#" class="nav-link"><h2 style="margin-bottom: 0;">Tim Alesi</h2></a>
+                </div>
+                <div class="nav-links">
+                    <a href="#capabilities" class="nav-link">Capabilities</a>
+                    <a href="#demos" class="nav-link">Demos</a>
+                    <a href="#benefits" class="nav-link">Benefits</a>
+                    <a href="#integration" class="nav-link">Integration</a>
+                </div>
+                <div>
+                    <a href="#contact" class="button">Get Started</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Tim Alesi - Web Development AGI</h1>
+                        <p>Transforming ideas into elegant, functional web experiences through AI-powered expertise.</p>
+                        <a href="#demos" class="button">Experience the Future of Web Development</a>
+                    </div>
+                    <div class="hero-visual">
+                        <!-- Placeholder for visualization -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="capabilities" class="section">
+            <div class="container">
+                <h2 class="section-title">Capabilities</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Web Development Expertise</h3>
+                        <p>Modern semantic HTML, advanced CSS techniques, interactive JavaScript, and performance optimization.</p>
+                    </div>
+                    <div class="card">
+                        <h3>AI-Powered Design</h3>
+                        <p>Intelligent layout generation, design system creation, visual hierarchy optimization, and accessibility compliance.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Technical Problem Solving</h3>
+                        <p>Code debugging, performance optimization, cross-browser compatibility solutions, and responsive design challenges.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Real-time Collaboration</h3>
+                        <p>Live code generation and preview, interactive feedback implementation, and seamless deployment workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demos" class="section">
+            <div class="container">
+                <h2 class="section-title">Interactive Demonstrations</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Code Generation</h3>
+                        <p>Experience real-time code generation with syntax highlighting and instant preview capabilities.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Design System Generation</h3>
+                        <p>Create comprehensive design systems with typography scales, color palettes, and component libraries.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Problem Solving</h3>
+                        <p>Watch as complex web development challenges are analyzed and solved with clear explanations.</p>
+                    </div>
+                    <div class="card">
+                        <h3>GitHub Integration</h3>
+                        <p>Seamlessly integrate with GitHub for version control, collaboration, and automated deployments.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="benefits" class="section">
+            <div class="container">
+                <h2 class="section-title">Business Benefits</h2>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Development Speed</h3>
+                        <p>Accelerate your web development process by up to 10x with AI-assisted code generation and optimization.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Technical Excellence</h3>
+                        <p>Ensure your codebase follows best practices for performance, accessibility, and maintainability.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Problem Resolution</h3>
+                        <p>Quickly identify and fix issues in your existing code to eliminate technical debt.</p>
+                    </div>
+                    <div class="card">
+                        <h3>Return on Investment</h3>
+                        <p>Reduce development costs while improving quality and user experience for maximum business impact.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="integration" class="section integration">
+            <div class="container">
+                <h2 class="section-title">chat.satware.ai Integration</h2>
+                <div class="cards">
+                    <div class="card" style="background-color: rgba(255,255,255,0.1); color: white;">
+                        <h3 style="color: white;">Seamless Connection</h3>
+                        <p>Experience seamless integration between Tim Alesi and chat.satware.ai for a unified development experience.</p>
+                    </div>
+                    <div class="card" style="background-color: rgba(255,255,255,0.1); color: white;">
+                        <h3 style="color: white;">Enhanced Capabilities</h3>
+                        <p>Leverage the full power of the satware AI ecosystem for comprehensive web development solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section cta">
+            <div class="container">
+                <h2 class="section-title">Transform your web development process today</h2>
+                <div class="cta-buttons">
+                    <a href="#" class="button">Get Started with Tim Alesi</a>
+                    <a href="#" class="button" style="background-color: transparent; color: var(--color-primary-light); border: 1px solid var(--color-primary-light);">Learn More</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>Tim Alesi - Web Development AGI</p>
+            <p>&copy; 2025 satware AG. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
